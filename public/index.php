@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use App\Core\Database;
+use App\Core\Router;
+use App\Core\View;
 
 // Load Composer autoload if dependencies are already installed.
 // This keeps the entry point usable before running composer install.
@@ -39,4 +41,15 @@ try {
         : ' (DB error)';
 }
 
-echo 'Plain PHP Smarty Blog' . $dbStatus;
+$view = new View();
+$router = new Router();
+
+$router->get('/', function () use ($view, $dbStatus): string {
+    return $view->render('home.tpl', [
+        'title' => 'Plain PHP Smarty Blog',
+        'dbStatus' => $dbStatus,
+    ]);
+});
+
+$response = $router->dispatch($_SERVER['REQUEST_URI'] ?? '/');
+echo is_string($response) ? $response : '';
