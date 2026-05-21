@@ -1,13 +1,274 @@
-﻿// Minimal base styles for initial setup
+@use "variables" as *;
 
+// Base
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
-  color: #222;
-  background-color: #fff;
+  background: $color-background;
+  color: $color-text;
+  font-family: $font-family-base;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// Layout
+.container {
+  width: min(100% - (#{$space-4} * 2), $container-width);
+  margin: 0 auto;
+}
+
+.site-header {
+  background: $color-primary;
+}
+
+.site-header__inner {
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.site-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.site-main {
+  padding: $space-6 0;
+}
+
+.site-footer {
+  margin-top: $space-6;
+  background: $color-primary;
+}
+
+.site-footer__inner {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+// Pages
+.home-page,
+.category-page,
+.article-page {
+  width: 100%;
+}
+
+// Category sections
+.category-block {
+  margin-bottom: $space-6;
+}
+
+.category-header {
+  margin-bottom: $space-4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $space-3;
+}
+
+.category-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-text;
+}
+
+.category-all-link {
+  font-size: 12px;
+  color: $color-muted;
+  text-decoration: underline;
+}
+
+// Article cards
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: $space-5;
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-image-link {
+  display: block;
+}
+
+.article-image {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: $radius;
+  margin-bottom: $space-3;
+}
+
+.article-title {
+  margin: 0 0 $space-2;
+  font-size: 16px;
+  line-height: 1.35;
+  color: $color-text;
+}
+
+.article-title a {
+  text-decoration: none;
+}
+
+.article-title a:hover {
+  text-decoration: underline;
+}
+
+.article-meta {
+  margin: 0 0 $space-2;
+  font-size: 12px;
+  color: $color-muted;
+}
+
+.article-description {
+  margin: 0 0 $space-3;
+  font-size: 13px;
+  color: $color-muted;
+}
+
+.article-read-more {
+  font-size: 12px;
+  color: $color-text;
+  text-decoration: underline;
+}
+
+// Common page elements
+.page-title {
+  margin: 0 0 $space-3;
+  font-size: 28px;
+  color: $color-text;
+}
+
+.back-link-wrap {
+  margin: 0 0 $space-4;
+  font-size: 13px;
+}
+
+.category-description,
+.state-message {
+  margin: 0 0 $space-4;
+  font-size: 13px;
+  color: $color-muted;
+}
+
+// Article detail page
+.article-detail {
+  margin-bottom: $space-6;
+}
+
+.article-content {
+  margin-top: $space-3;
+  font-size: 16px;
+}
+
+.article-categories {
+  margin-top: $space-4;
+  font-size: 13px;
+}
+
+// Sorting
+.category-sort {
+  margin: 0 0 $space-5;
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  flex-wrap: wrap;
+}
+
+.category-sort label {
+  font-size: 13px;
+  color: $color-muted;
+}
+
+.category-sort select,
+.category-sort button {
+  border: 1px solid $color-border;
+  border-radius: $radius;
+  padding: 6px 10px;
+  background: #ffffff;
+  color: $color-text;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.category-sort button {
+  cursor: pointer;
+}
+
+// Pagination
+.pagination {
+  margin-top: $space-5;
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+}
+
+.pagination-link,
+.pagination-status {
+  font-size: 13px;
+  color: $color-muted;
+}
+
+.pagination-link {
+  text-decoration: underline;
+}
+
+.pagination-link.is-disabled {
+  text-decoration: none;
+}
+
+// Responsive
+@media (max-width: 1024px) {
+  .article-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: $space-4;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-main {
+    padding: $space-5 0;
+  }
+
+  .category-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: $space-2;
+  }
+
+  .article-list {
+    grid-template-columns: 1fr;
+    gap: $space-4;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
 }

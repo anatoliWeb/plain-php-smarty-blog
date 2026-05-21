@@ -74,13 +74,13 @@
 - [x] Check empty and invalid page states
 
 ## 9. Templates and styles
-- [ ] Add main Smarty layout
-- [ ] Add header partial
+- [x] Add main Smarty layout
+- [x] Add header partial
 - [x] Add pagination partial
 - [ ] Add article card partial if it keeps templates cleaner
-- [ ] Add SCSS source file
-- [ ] Add compiled CSS file
-- [ ] Make pages readable on desktop and mobile
+- [x] Add SCSS source file
+- [x] Add compiled CSS file
+- [x] Make pages readable on desktop and mobile
 
 ## 10. Final cleanup
 - [ ] Check code formatting

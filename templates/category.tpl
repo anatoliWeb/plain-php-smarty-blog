@@ -1,90 +1,57 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{$title|escape} - Plain PHP Smarty Blog</title>
-</head>
-<body>
-    <main class="category-page">
-        <p>
-            <a href="/">Back to home</a>
-        </p>
+{extends file="layouts/main.tpl"}
 
-        <h1 class="category-title">{$category.title|escape}</h1>
+{block name="content"}
+    <section class="category-page">
+        <p class="back-link-wrap"><a href="/">Back to home</a></p>
 
-        {if $category.description}
-            <p class="category-description">{$category.description|escape}</p>
-        {/if}
+        <section class="category-block">
+            <header class="category-header">
+                <h1 class="category-title">{$category.title|escape}</h1>
+            </header>
 
-        <form class="category-sort" method="get" action="">
-            <label for="sort">Sort by:</label>
+            {if $category.description}
+                <p class="category-description">{$category.description|escape}</p>
+            {/if}
 
-            <select name="sort" id="sort">
-                {foreach $sortOptions as $value => $label}
-                    <option value="{$value|escape}" {if $sort == $value}selected="selected"{/if}>
-                        {$label|escape}
-                    </option>
-                {/foreach}
-            </select>
+            <form class="category-sort" method="get" action="">
+                <label for="sort">Sort by:</label>
+                <select name="sort" id="sort">
+                    {foreach $sortOptions as $value => $label}
+                        <option value="{$value|escape}" {if $sort == $value}selected="selected"{/if}>{$label|escape}</option>
+                    {/foreach}
+                </select>
+                <button type="submit">Apply</button>
+            </form>
 
-            <button type="submit">Apply</button>
-        </form>
+            {if empty($articles)}
+                <p class="state-message">No articles found in this category.</p>
+            {else}
+                <div class="article-list">
+                    {foreach $articles as $article}
+                        <article class="article-card">
+                            {if $article.image}
+                                <a class="article-image-link" href="/article/{$article.slug|escape}">
+                                    <img class="article-image" src="{$article.image|escape}" alt="{$article.title|escape}">
+                                </a>
+                            {/if}
 
-        {if empty($articles)}
-            <p class="category-empty">No articles found in this category.</p>
-        {else}
-            <div class="article-list">
-                {foreach $articles as $article}
-                    <article class="article-card">
-                        {if $article.image}
-                            <a href="/article/{$article.slug|escape}">
-                                <img
-                                    src="{$article.image|escape}"
-                                    alt="{$article.title|escape}"
-                                    class="article-image"
-                                >
-                            </a>
-                        {/if}
+                            <h2 class="article-title">
+                                <a href="/article/{$article.slug|escape}">{$article.title|escape}</a>
+                            </h2>
 
-                        <h2 class="article-title">
-                            <a href="/article/{$article.slug|escape}">
-                                {$article.title|escape}
-                            </a>
-                        </h2>
+                            <p class="article-meta">{$article.published_at|escape} &middot; {$article.views_count|escape} views</p>
 
-                        {if $article.description}
-                            <p class="article-description">{$article.description|escape}</p>
-                        {/if}
+                            {if $article.description}
+                                <p class="article-description">{$article.description|escape}</p>
+                            {/if}
 
-                        <p class="article-meta">
-                            <span>Published: {$article.published_at|escape}</span>
-                            <span>Views: {$article.views_count|escape}</span>
-                        </p>
-                    </article>
-                {/foreach}
-            </div>
-        {/if}
+                            <a class="article-read-more" href="/article/{$article.slug|escape}">Continue Reading</a>
+                        </article>
+                    {/foreach}
+                </div>
+            {/if}
 
-        {if $pagination.totalPages > 1}
-            <nav class="pagination">
-                {if $pagination.hasPreviousPage}
-                    <a href="?page={$pagination.previousPage|escape}&sort={$sort|escape}">Previous</a>
-                {else}
-                    <span>Previous</span>
-                {/if}
-
-                <span>
-                    Page {$pagination.currentPage|escape} of {$pagination.totalPages|escape}
-                </span>
-
-                {if $pagination.hasNextPage}
-                    <a href="?page={$pagination.nextPage|escape}&sort={$sort|escape}">Next</a>
-                {else}
-                    <span>Next</span>
-                {/if}
-            </nav>
-        {/if}
-    </main>
-</body>
-</html>
+            {include file="partials/pagination.tpl" pagination=$pagination sort=$sort}
+        </section>
+    </section>
+{/block}
