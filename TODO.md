@@ -77,15 +77,15 @@
 - [x] Add main Smarty layout
 - [x] Add header partial
 - [x] Add pagination partial
-- [ ] Add article card partial if it keeps templates cleaner
+- [x] Add article card partial if it keeps templates cleaner
 - [x] Add SCSS source file
 - [x] Add compiled CSS file
 - [x] Make pages readable on desktop and mobile
 
 ## 10. Final cleanup
-- [ ] Check code formatting
-- [ ] Remove unused files and debug output
-- [ ] Check SQL queries manually
-- [ ] Test fresh project setup
-- [ ] Update README if setup changed
-- [ ] Do final manual test
+- [x] Check code formatting
+- [x] Remove unused files and debug output
+- [x] Check SQL queries manually
+- [x] Test fresh project setup
+- [x] Update README if setup changed
+- [x] Do final manual test
