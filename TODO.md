@@ -3,7 +3,7 @@
 ## 1. Project documentation
 - [x] Add `README.md`
 - [x] Add `.gitignore`
-- [ ] Add project description in repository
+- [x] Add project description in repository
 - [ ] Check that README setup steps are correct after Docker setup is added
 
 ## 2. Base project setup
