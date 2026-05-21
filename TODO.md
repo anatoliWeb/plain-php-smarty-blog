@@ -61,9 +61,9 @@
 - [x] Add category page
 - [x] Show category title and description
 - [x] Show article list for selected category
-- [ ] Add article page
-- [ ] Show full article information
-- [ ] Show 3 related articles
+- [x] Add article page
+- [x] Show full article information
+- [x] Show 3 related articles
 
 ## 8. Sorting and pagination
 - [x] Add sorting by publication date

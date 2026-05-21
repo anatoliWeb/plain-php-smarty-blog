@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controllers\ArticleController;
 use App\Controllers\CategoryController;
 use App\Controllers\HomeController;
 use App\Core\Database;
@@ -51,6 +52,7 @@ $articleModel = new Article($pdo);
 
 $homeController = new HomeController($view, $categoryModel, $articleModel);
 $categoryController = new CategoryController($view, $categoryModel, $articleModel);
+$articleController = new ArticleController($view, $articleModel);
 
 // Register application routes.
 $router->get('/', function () use ($homeController): string {
@@ -59,6 +61,10 @@ $router->get('/', function () use ($homeController): string {
 
 $router->get('/category/{slug}', function (string $slug) use ($categoryController): string {
     return $categoryController->show($slug);
+});
+
+$router->get('/article/{slug}', function (string $slug) use ($articleController): string {
+    return $articleController->show($slug);
 });
 
 // Dispatch the current request and output the response.
