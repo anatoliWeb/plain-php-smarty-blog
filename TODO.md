@@ -22,7 +22,7 @@
 - [x] Add MySQL service
 - [x] Add automatic `.env` creation on first start
 - [x] Add automatic Composer install on container start
-- [x] Check that the application opens at `http://localhost:8080`
+- [x] Check that the application opens at `http://localhost:8081`
 
 ## 4. Database
 - [x] Create database schema
@@ -77,7 +77,7 @@
 - [x] Add main Smarty layout
 - [x] Add header partial
 - [x] Add pagination partial
-- [x] Add article card partial if it keeps templates cleaner
+- [ ] Add article card partial if it keeps templates cleaner
 - [x] Add SCSS source file
 - [x] Add compiled CSS file
 - [x] Make pages readable on desktop and mobile

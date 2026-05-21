@@ -63,6 +63,20 @@ cd plain-php-smarty-blog
 
 Build and start containers:
 
+Create `.env` before running Docker Compose (recommended because Docker Compose reads `.env` before containers start):
+
+Linux/macOS:
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell:
+```powershell
+Copy-Item .env.example .env
+```
+
+Then build and start containers:
+
 ```bash
 docker compose up -d --build
 ```
@@ -70,10 +84,9 @@ docker compose up -d --build
 Open the application:
 
 ```text
-http://localhost:8080
+http://localhost:8081
 ```
-
-On the first Docker start, the application creates `.env` from `.env.example` automatically if `.env` does not exist. Composer dependencies are also installed inside the PHP container.
+The PHP container entrypoint can still create `.env` automatically if it is missing, and it also runs Composer install if `vendor` is missing.
 
 ## Database
 
@@ -97,9 +110,9 @@ docker compose up -d --build
 
 | Service | URL / Port |
 |---|---|
-| Application | http://localhost:8080 |
+| Application | http://localhost:8081 |
 | MySQL inside Docker | mysql:3306 |
-| MySQL from host | localhost:3307 |
+| MySQL from host | localhost:3308 |
 
 Default database credentials are stored in `.env.example`.
 
