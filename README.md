@@ -28,28 +28,28 @@ The project is built without a framework. It uses plain PHP, MySQL, PDO and Smar
 
 ```text
 .
-├── app/
-│   ├── Controllers/
-│   ├── Core/
-│   └── Models/
-├── config/
-├── database/
-│   ├── schema.sql
-│   └── seed.sql
-├── docker/
-│   ├── nginx/
-│   └── php/
-├── public/
-│   ├── index.php
-│   └── assets/
-│       └── css/
-├── resources/
-│   └── scss/
-├── templates/
-├── var/
-├── composer.json
-├── docker-compose.yml
-└── TODO.md
+|-- app/
+|   |-- Controllers/
+|   |-- Core/
+|   `-- Models/
+|-- config/
+|-- database/
+|   |-- schema.sql
+|   `-- seed.sql
+|-- docker/
+|   |-- nginx/
+|   `-- php/
+|-- public/
+|   |-- index.php
+|   `-- assets/
+|       `-- css/
+|-- resources/
+|   `-- scss/
+|-- templates/
+|-- var/
+|-- composer.json
+|-- docker-compose.yml
+`-- TODO.md
 ```
 
 ## Setup
@@ -136,6 +136,7 @@ For development, watch mode can be used:
 ```bash
 npx --yes sass --watch resources/scss/app.scss:public/assets/css/app.css --no-source-map
 ```
+
 ## Notes
 
 The project intentionally keeps the architecture simple.

@@ -57,7 +57,7 @@
 - [x] Add home page
 - [x] Show categories with articles on home page
 - [x] Show 3 latest articles for each category
-- [x] Add “All articles” link for each category
+- [x] Add "All articles" link for each category
 - [x] Add category page
 - [x] Show category title and description
 - [x] Show article list for selected category
