@@ -8,7 +8,7 @@
             <h1 class="page-title">{$article.title|escape}</h1>
 
             {if $article.image}
-                <img class="article-image" src="{$article.image|escape}" alt="{$article.title|escape}">
+                <img class="article-image" src="/assets/images/{$article.image|escape}" alt="{$article.title|escape}">
             {/if}
 
             <p class="article-meta">{$article.published_at|escape} &middot; {$article.views_count|escape} views</p>
@@ -41,25 +41,7 @@
             {else}
                 <div class="article-list">
                     {foreach $relatedArticles as $related}
-                        <article class="article-card">
-                            {if $related.image}
-                                <a class="article-image-link" href="/article/{$related.slug|escape}">
-                                    <img class="article-image" src="{$related.image|escape}" alt="{$related.title|escape}">
-                                </a>
-                            {/if}
-
-                            <h3 class="article-title">
-                                <a href="/article/{$related.slug|escape}">{$related.title|escape}</a>
-                            </h3>
-
-                            <p class="article-meta">{$related.published_at|escape}</p>
-
-                            {if $related.description}
-                                <p class="article-description">{$related.description|escape}</p>
-                            {/if}
-
-                            <a class="article-read-more" href="/article/{$related.slug|escape}">Continue Reading</a>
-                        </article>
+                        {include file="partials/article-card.tpl" article=$article}
                     {/foreach}
                 </div>
             {/if}

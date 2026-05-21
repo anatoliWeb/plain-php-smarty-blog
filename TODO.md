@@ -77,7 +77,7 @@
 - [x] Add main Smarty layout
 - [x] Add header partial
 - [x] Add pagination partial
-- [ ] Add article card partial if it keeps templates cleaner
+- [x] Add article card partial if it keeps templates cleaner
 - [x] Add SCSS source file
 - [x] Add compiled CSS file
 - [x] Make pages readable on desktop and mobile
