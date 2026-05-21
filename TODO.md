@@ -7,13 +7,13 @@
 - [ ] Check that README setup steps are correct after Docker setup is added
 
 ## 2. Base project setup
-- [ ] Create base project structure
-- [ ] Add `composer.json`
-- [ ] Add Smarty dependency
-- [ ] Add PSR-4 autoload configuration
-- [ ] Add `.env.example`
-- [ ] Add public entry point `public/index.php`
-- [ ] Add Smarty cache directories
+- [x] Create base project structure
+- [x] Add `composer.json`
+- [x] Add Smarty dependency
+- [x] Add PSR-4 autoload configuration
+- [x] Add `.env.example`
+- [x] Add public entry point `public/index.php`
+- [x] Add Smarty cache directories
 
 ## 3. Docker environment
 - [ ] Add `docker-compose.yml`
