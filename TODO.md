@@ -58,25 +58,25 @@
 - [x] Show categories with articles on home page
 - [x] Show 3 latest articles for each category
 - [x] Add “All articles” link for each category
-- [ ] Add category page
-- [ ] Show category title and description
-- [ ] Show article list for selected category
+- [x] Add category page
+- [x] Show category title and description
+- [x] Show article list for selected category
 - [ ] Add article page
 - [ ] Show full article information
 - [ ] Show 3 related articles
 
 ## 8. Sorting and pagination
-- [ ] Add sorting by publication date
-- [ ] Add sorting by views count
-- [ ] Add pagination to category page
-- [ ] Keep sorting value when changing page
-- [ ] Validate unsupported sorting values
-- [ ] Check empty and invalid page states
+- [x] Add sorting by publication date
+- [x] Add sorting by views count
+- [x] Add pagination to category page
+- [x] Keep sorting value when changing page
+- [x] Validate unsupported sorting values
+- [x] Check empty and invalid page states
 
 ## 9. Templates and styles
 - [ ] Add main Smarty layout
 - [ ] Add header partial
-- [ ] Add pagination partial
+- [x] Add pagination partial
 - [ ] Add article card partial if it keeps templates cleaner
 - [ ] Add SCSS source file
 - [ ] Add compiled CSS file

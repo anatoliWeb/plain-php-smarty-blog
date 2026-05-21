@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Controllers\CategoryController;
 use App\Controllers\HomeController;
 use App\Core\Database;
 use App\Core\Router;
@@ -34,21 +35,33 @@ try {
     $pdo = $database->getConnection();
 } catch (Throwable $e) {
     http_response_code(500);
+
     echo !empty($config['app']['debug'])
         ? 'Database connection error: ' . $e->getMessage()
         : 'Internal Server Error';
+
     exit;
 }
 
 $view = new View();
 $router = new Router();
+
 $categoryModel = new Category($pdo);
 $articleModel = new Article($pdo);
-$homeController = new HomeController($view, $categoryModel, $articleModel);
 
+$homeController = new HomeController($view, $categoryModel, $articleModel);
+$categoryController = new CategoryController($view, $categoryModel, $articleModel);
+
+// Register application routes.
 $router->get('/', function () use ($homeController): string {
     return $homeController->index();
 });
 
+$router->get('/category/{slug}', function (string $slug) use ($categoryController): string {
+    return $categoryController->show($slug);
+});
+
+// Dispatch the current request and output the response.
 $response = $router->dispatch($_SERVER['REQUEST_URI'] ?? '/');
+
 echo is_string($response) ? $response : '';

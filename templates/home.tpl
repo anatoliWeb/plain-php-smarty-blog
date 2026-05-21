@@ -16,6 +16,7 @@
                 <section class="category-block">
                     <header class="category-header">
                         <h2 class="category-title">{$category.title|escape}</h2>
+
                         <a class="category-all-link" href="/category/{$category.slug|escape}">
                             All articles
                         </a>
@@ -33,12 +34,18 @@
                                 <article class="article-card">
                                     {if $article.image}
                                         <a class="article-image-link" href="/article/{$article.slug|escape}">
-                                            <img class="article-image" src="{$article.image|escape}" alt="{$article.title|escape}">
+                                            <img
+                                                class="article-image"
+                                                src="{$article.image|escape}"
+                                                alt="{$article.title|escape}"
+                                            >
                                         </a>
                                     {/if}
 
                                     <h3 class="article-title">
-                                        <a href="/article/{$article.slug|escape}">{$article.title|escape}</a>
+                                        <a href="/article/{$article.slug|escape}">
+                                            {$article.title|escape}
+                                        </a>
                                     </h3>
 
                                     {if $article.description}
@@ -58,4 +65,4 @@
         {/if}
     </main>
 </body>
-</html>
+</html> 
