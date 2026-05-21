@@ -25,14 +25,14 @@
 - [x] Check that the application opens at `http://localhost:8080`
 
 ## 4. Database
-- [ ] Create database schema
-- [ ] Add `categories` table
-- [ ] Add `articles` table
-- [ ] Add `article_category` pivot table
-- [ ] Add indexes for slugs, dates, views and relations
-- [ ] Add seed data for categories
-- [ ] Add seed data for articles
-- [ ] Check database import on fresh Docker start
+- [x] Create database schema
+- [x] Add `categories` table
+- [x] Add `articles` table
+- [x] Add `article_category` pivot table
+- [x] Add indexes for slugs, dates, views and relations
+- [x] Add seed data for categories
+- [x] Add seed data for articles
+- [x] Check database import on fresh Docker start
 
 ## 5. Core application
 - [ ] Add application config
