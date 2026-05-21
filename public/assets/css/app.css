@@ -1,0 +1,12 @@
+﻿/* Minimal base styles for initial setup */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #222;
+  background-color: #fff;
+}

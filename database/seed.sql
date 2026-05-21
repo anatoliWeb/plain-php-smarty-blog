@@ -1,0 +1,2 @@
+﻿-- Placeholder seed file.
+-- Database seed data will be added in a later step.
