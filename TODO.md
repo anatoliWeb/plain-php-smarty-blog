@@ -43,9 +43,9 @@
 - [x] Add pagination helper
 
 ## 6. Models and queries
-- [ ] Add `Category` model
-- [ ] Add method to get categories that have articles
-- [ ] Add method to find category by slug
+- [x] Add `Category` model
+- [x] Add method to get categories that have articles
+- [x] Add method to find category by slug
 - [ ] Add `Article` model
 - [ ] Add method to get latest articles by category
 - [ ] Add method to get articles by category with sorting and pagination
