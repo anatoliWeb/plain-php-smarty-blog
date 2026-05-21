@@ -1,0 +1,11 @@
+/vendor/
+/.env
+
+/var/cache/smarty/compile/*
+/var/cache/smarty/cache/*
+
+!.gitkeep
+
+.DS_Store
+.idea/
+.vscode/
