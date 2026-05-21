@@ -46,12 +46,12 @@
 - [x] Add `Category` model
 - [x] Add method to get categories that have articles
 - [x] Add method to find category by slug
-- [ ] Add `Article` model
-- [ ] Add method to get latest articles by category
-- [ ] Add method to get articles by category with sorting and pagination
-- [ ] Add method to find article by slug
-- [ ] Add method to get related articles
-- [ ] Add method to increase article views
+- [x] Add `Article` model
+- [x] Add method to get latest articles by category
+- [x] Add method to get articles by category with sorting and pagination
+- [x] Add method to find article by slug
+- [x] Add method to get related articles
+- [x] Add method to increase article views
 
 ## 7. Pages
 - [ ] Add home page
