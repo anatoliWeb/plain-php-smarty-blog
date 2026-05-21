@@ -40,7 +40,7 @@
 - [x] Add simple router
 - [x] Add Smarty view wrapper
 - [x] Add basic local error handling
-- [ ] Add pagination helper
+- [x] Add pagination helper
 
 ## 6. Models and queries
 - [ ] Add `Category` model
