@@ -4,7 +4,7 @@
 - [x] Add `README.md`
 - [x] Add `.gitignore`
 - [x] Add project description in repository
-- [ ] Check that README setup steps are correct after Docker setup is added
+- [x] Check that README setup steps are correct after Docker setup is added
 
 ## 2. Base project setup
 - [x] Create base project structure
@@ -16,13 +16,13 @@
 - [x] Add Smarty cache directories
 
 ## 3. Docker environment
-- [ ] Add `docker-compose.yml`
-- [ ] Add PHP-FPM Dockerfile
-- [ ] Add Nginx config
-- [ ] Add MySQL service
-- [ ] Add automatic `.env` creation on first start
-- [ ] Add automatic Composer install on container start
-- [ ] Check that the application opens at `http://localhost:8080`
+- [x] Add `docker-compose.yml`
+- [x] Add PHP-FPM Dockerfile
+- [x] Add Nginx config
+- [x] Add MySQL service
+- [x] Add automatic `.env` creation on first start
+- [x] Add automatic Composer install on container start
+- [x] Check that the application opens at `http://localhost:8080`
 
 ## 4. Database
 - [ ] Create database schema
