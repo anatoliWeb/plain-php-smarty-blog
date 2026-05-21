@@ -35,11 +35,11 @@
 - [x] Check database import on fresh Docker start
 
 ## 5. Core application
-- [ ] Add application config
-- [ ] Add PDO database connection
+- [x] Add application config
+- [x] Add PDO database connection
 - [ ] Add simple router
 - [ ] Add Smarty view wrapper
-- [ ] Add basic local error handling
+- [x] Add basic local error handling
 - [ ] Add pagination helper
 
 ## 6. Models and queries
