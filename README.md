@@ -105,7 +105,13 @@ Default database credentials are stored in `.env.example`.
 
 ## Styles
 
-SCSS source file is stored in:
+SCSS source files are stored in:
+
+```text
+resources/scss/
+```
+
+The main SCSS file is:
 
 ```text
 resources/scss/app.scss
@@ -117,8 +123,19 @@ Compiled CSS is stored in:
 public/assets/css/app.css
 ```
 
-For this test task, compiled CSS is committed to the repository, so Node.js is not required to run the project.
+The compiled CSS file is committed to the repository, so Node.js or npm is not required to run the project.
 
+If SCSS files are changed, CSS can be rebuilt with:
+
+```bash
+npx --yes sass resources/scss/app.scss public/assets/css/app.css --no-source-map
+```
+
+For development, watch mode can be used:
+
+```bash
+npx --yes sass --watch resources/scss/app.scss:public/assets/css/app.css --no-source-map
+```
 ## Notes
 
 The project intentionally keeps the architecture simple.
