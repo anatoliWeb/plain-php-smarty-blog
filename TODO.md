@@ -37,8 +37,8 @@
 ## 5. Core application
 - [x] Add application config
 - [x] Add PDO database connection
-- [ ] Add simple router
-- [ ] Add Smarty view wrapper
+- [x] Add simple router
+- [x] Add Smarty view wrapper
 - [x] Add basic local error handling
 - [ ] Add pagination helper
 
