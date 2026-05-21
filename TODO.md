@@ -54,10 +54,10 @@
 - [x] Add method to increase article views
 
 ## 7. Pages
-- [ ] Add home page
-- [ ] Show categories with articles on home page
-- [ ] Show 3 latest articles for each category
-- [ ] Add “All articles” link for each category
+- [x] Add home page
+- [x] Show categories with articles on home page
+- [x] Show 3 latest articles for each category
+- [x] Add “All articles” link for each category
 - [ ] Add category page
 - [ ] Show category title and description
 - [ ] Show article list for selected category

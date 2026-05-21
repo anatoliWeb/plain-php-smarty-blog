@@ -2,9 +2,12 @@
 
 declare(strict_types=1);
 
+use App\Controllers\HomeController;
 use App\Core\Database;
 use App\Core\Router;
 use App\Core\View;
+use App\Models\Article;
+use App\Models\Category;
 
 // Load Composer autoload if dependencies are already installed.
 // This keeps the entry point usable before running composer install.
@@ -26,29 +29,25 @@ if (!empty($config['app']['debug'])) {
     ini_set('display_errors', '0');
 }
 
-$dbStatus = '';
-
 try {
-    // Temporary connection check.
-    // This will be removed when real routing and pages are added.
     $database = new Database($config['database']);
-    $database->getConnection();
-
-    $dbStatus = ' (DB connected)';
+    $pdo = $database->getConnection();
 } catch (Throwable $e) {
-    $dbStatus = !empty($config['app']['debug'])
-        ? ' (DB error: ' . $e->getMessage() . ')'
-        : ' (DB error)';
+    http_response_code(500);
+    echo !empty($config['app']['debug'])
+        ? 'Database connection error: ' . $e->getMessage()
+        : 'Internal Server Error';
+    exit;
 }
 
 $view = new View();
 $router = new Router();
+$categoryModel = new Category($pdo);
+$articleModel = new Article($pdo);
+$homeController = new HomeController($view, $categoryModel, $articleModel);
 
-$router->get('/', function () use ($view, $dbStatus): string {
-    return $view->render('home.tpl', [
-        'title' => 'Plain PHP Smarty Blog',
-        'dbStatus' => $dbStatus,
-    ]);
+$router->get('/', function () use ($homeController): string {
+    return $homeController->index();
 });
 
 $response = $router->dispatch($_SERVER['REQUEST_URI'] ?? '/');
