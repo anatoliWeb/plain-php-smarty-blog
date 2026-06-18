@@ -95,6 +95,7 @@
 - [x] Create SOLID refactoring plan documentation
 - [x] Add repositories without changing runtime behavior
 - [x] Move page orchestration into services
+- [x] Move article page orchestration into services
 - [ ] Refactor controllers into thin adapters
 - [ ] Move SQL/data access into repositories
 - [ ] Re-verify public URLs, Docker, templates, and database after refactor
