@@ -94,7 +94,7 @@
 - [x] Audit current architecture for SOLID boundaries
 - [x] Create SOLID refactoring plan documentation
 - [x] Add repositories without changing runtime behavior
+- [x] Move page orchestration into services
 - [ ] Refactor controllers into thin adapters
 - [ ] Move SQL/data access into repositories
-- [ ] Move page orchestration into services
 - [ ] Re-verify public URLs, Docker, templates, and database after refactor

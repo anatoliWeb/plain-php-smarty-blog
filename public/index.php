@@ -10,6 +10,9 @@ use App\Core\Router;
 use App\Core\View;
 use App\Models\Article;
 use App\Models\Category;
+use App\Repositories\ArticleRepository;
+use App\Repositories\CategoryRepository;
+use App\Services\HomePageService;
 
 // Load Composer autoload if dependencies are already installed.
 // This keeps the entry point usable before running composer install.
@@ -47,10 +50,14 @@ try {
 $view = new View();
 $router = new Router();
 
+$categoryRepository = new CategoryRepository($pdo);
+$articleRepository = new ArticleRepository($pdo);
+$homePageService = new HomePageService($categoryRepository, $articleRepository);
+
 $categoryModel = new Category($pdo);
 $articleModel = new Article($pdo);
 
-$homeController = new HomeController($view, $categoryModel, $articleModel);
+$homeController = new HomeController($view, $homePageService);
 $categoryController = new CategoryController($view, $categoryModel, $articleModel);
 $articleController = new ArticleController($view, $articleModel);
 
