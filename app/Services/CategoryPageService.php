@@ -12,7 +12,7 @@ class CategoryPageService
 {
     private CategoryRepository $categoryRepository;
     private ArticleRepository $articleRepository;
-    private int $perPage = 3;
+    private int $perPage = 6;
 
     public function __construct(CategoryRepository $categoryRepository, ArticleRepository $articleRepository)
     {

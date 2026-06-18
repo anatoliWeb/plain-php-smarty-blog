@@ -41,7 +41,7 @@
             {else}
                 <div class="article-list">
                     {foreach $relatedArticles as $related}
-                        {include file="partials/article-card.tpl" article=$article}
+                        {include file="partials/article-card.tpl" article=$related}
                     {/foreach}
                 </div>
             {/if}
