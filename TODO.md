@@ -100,4 +100,4 @@
 - [x] Refactor controllers into thin adapters
 - [x] Move SQL/data access into repositories
 - [x] Retire old model query classes
-- [ ] Re-verify public URLs, Docker, templates, and database after refactor
+- [x] Re-verify public URLs, Docker, templates, and database after refactor
