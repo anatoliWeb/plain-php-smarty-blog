@@ -93,6 +93,7 @@
 ## 11. SOLID refactoring branch
 - [x] Audit current architecture for SOLID boundaries
 - [x] Create SOLID refactoring plan documentation
+- [x] Add repositories without changing runtime behavior
 - [ ] Refactor controllers into thin adapters
 - [ ] Move SQL/data access into repositories
 - [ ] Move page orchestration into services
