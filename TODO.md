@@ -89,3 +89,11 @@
 - [x] Test fresh project setup
 - [x] Update README if setup changed
 - [x] Do final manual test
+
+## 11. SOLID refactoring branch
+- [x] Audit current architecture for SOLID boundaries
+- [x] Create SOLID refactoring plan documentation
+- [ ] Refactor controllers into thin adapters
+- [ ] Move SQL/data access into repositories
+- [ ] Move page orchestration into services
+- [ ] Re-verify public URLs, Docker, templates, and database after refactor
