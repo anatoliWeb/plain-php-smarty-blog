@@ -23,7 +23,7 @@ class ArticlePageService
             return null;
         }
 
-        // Count the page view before returning data so the article page reflects a fresh visit.
+        // Increment views before returning so the article page reflects the current visit.
         $articleId = (int) $article['id'];
         $this->articleRepository->increaseViews($articleId);
         $article['views_count'] = (int) $article['views_count'] + 1;

@@ -8,11 +8,10 @@ use App\Controllers\HomeController;
 use App\Core\Database;
 use App\Core\Router;
 use App\Core\View;
-use App\Models\Article;
-use App\Models\Category;
 use App\Repositories\ArticleRepository;
 use App\Repositories\CategoryRepository;
 use App\Services\ArticlePageService;
+use App\Services\CategoryPageService;
 use App\Services\HomePageService;
 
 // Load Composer autoload if dependencies are already installed.
@@ -54,13 +53,11 @@ $router = new Router();
 $categoryRepository = new CategoryRepository($pdo);
 $articleRepository = new ArticleRepository($pdo);
 $homePageService = new HomePageService($categoryRepository, $articleRepository);
+$categoryPageService = new CategoryPageService($categoryRepository, $articleRepository);
 $articlePageService = new ArticlePageService($articleRepository);
 
-$categoryModel = new Category($pdo);
-$articleModel = new Article($pdo);
-
 $homeController = new HomeController($view, $homePageService);
-$categoryController = new CategoryController($view, $categoryModel, $articleModel);
+$categoryController = new CategoryController($view, $categoryPageService);
 $articleController = new ArticleController($view, $articlePageService);
 
 // Register application routes.
